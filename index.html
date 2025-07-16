@@ -64,6 +64,13 @@
             margin-bottom: 0.25rem;
         }
 
+        #add-post-btn .nav-icon {
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .progress-bar {
             height: 4px;
             background-color: #E5E7EB;
@@ -825,14 +832,17 @@
                             <span>Community</span>
                         </button>
                         <button class="nav-tab" id="add-post-btn">
-                            <div
-                                class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center shadow-lg hover:bg-red-600 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                        d="M12 4v16m8-8H4" />
-                                </svg>
+                            <div class="nav-icon">
+                                <div
+                                    class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center shadow-lg hover:bg-red-600 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                            d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </div>
                             </div>
+                            <span style="opacity: 0; font-size: 0.75rem;">Add</span>
                         </button>
                         <button class="nav-tab" data-tab="profile">
                             <div class="nav-icon">
