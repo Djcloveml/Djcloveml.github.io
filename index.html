@@ -3,7 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>SmartMama Africa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -69,6 +73,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        /* 微信浏览器兼容性修复 */
+        .bottom-nav-container {
+            display: flex;
+            width: 100%;
+        }
+
+        .bottom-nav-container>button {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 确保在所有浏览器中居中 */
+        .nav-center-btn {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            flex: none;
         }
 
         .progress-bar {
@@ -819,9 +846,9 @@
 
             <!-- Bottom Navigation -->
             <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-10">
-                <div class="max-w-500px mx-auto">
-                    <div class="grid grid-cols-3 py-2">
-                        <button class="nav-tab active justify-self-center" data-tab="community">
+                <div class="max-w-500px mx-auto relative">
+                    <div class="bottom-nav-container py-2">
+                        <button class="nav-tab active" data-tab="community">
                             <div class="nav-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
@@ -831,20 +858,8 @@
                             </div>
                             <span>Community</span>
                         </button>
-                        <button class="nav-tab justify-self-center" id="add-post-btn">
-                            <div class="nav-icon">
-                                <div
-                                    class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center shadow-lg hover:bg-red-600 transition-colors">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
-                                            d="M12 4v16m8-8H4" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <span style="opacity: 0; font-size: 0.75rem;">Add</span>
-                        </button>
-                        <button class="nav-tab justify-self-center" data-tab="profile">
+                        <div style="flex: 1;"></div>
+                        <button class="nav-tab" data-tab="profile">
                             <div class="nav-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
@@ -855,6 +870,21 @@
                             <span>Me</span>
                         </button>
                     </div>
+                    <!-- 红色加号按钮 - 绝对居中 -->
+                    <button class="nav-tab nav-center-btn" id="add-post-btn"
+                        style="top: 50%; transform: translate(-50%, -50%);">
+                        <div class="nav-icon">
+                            <div
+                                class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center shadow-lg hover:bg-red-600 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="M12 4v16m8-8H4" />
+                                </svg>
+                            </div>
+                        </div>
+                        <span style="opacity: 0; font-size: 0.75rem;">Add</span>
+                    </button>
                 </div>
             </div>
         </div>
